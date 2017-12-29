@@ -1,0 +1,40 @@
+module Memory(address, mio, data, readRequest, clock);
+
+parameter ADDRESS_WIDTH	=	32;
+parameter SIZE					= ({ADDRESS_WIDTH{1'b0}} + 1) << (ADDRESS_WIDTH - 1);
+
+//file initialization
+parameter INITIALIZATION_FILE = "";
+
+//ports
+input wire[ADDRESS_WIDTH - 1 : 0]	address;
+input															mio;
+inout wire[7 : 0]									data;
+input wire												readRequest;
+input wire												clock;
+
+//local variables
+reg dataEnabled;
+
+reg[7 : 0] memory[0 : SIZE - 1];
+
+assign data = dataEnabled == 1 ? memory[address] : {8{1'bz}};
+
+initial begin
+	if (INITIALIZATION_FILE != "") begin
+		$readmemh(INITIALIZATION_FILE, memory);
+	end
+end
+
+always @(posedge clock) begin
+	dataEnabled <= 0;
+	if (address < SIZE && mio == 1) begin
+		if (readRequest == 1) begin
+			dataEnabled <= 1;
+		end else if (readRequest == 0) begin
+			memory[address] <= data;
+		end
+	end
+end
+	
+endmodule

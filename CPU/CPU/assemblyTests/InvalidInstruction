@@ -1,0 +1,41 @@
+.data.ivt
+	.long init
+	.long 0
+	.long intstructionInterrupt
+.text.ivt
+
+intstructionInterrupt:
+	add r0, 1
+	iret
+
+init:
+
+	ldc r0, 0
+
+.long 0xe1980000
+.long 0xe1026000
+
+.long 0xe2980000
+.long 0xe2026000
+
+.long 0xe3980000
+.long 0xe3026000
+.long 0xe3800000
+.long 0xe3020000
+.long 0xe3880000
+.long 0xe3022000
+.long 0xe3900000
+.long 0xe3024000
+
+.long 0xe6800000
+.long 0xe6040000
+.long 0xe6880000
+.long 0xe6804400
+.long 0xe6980000
+.long 0xe604c000
+
+.long 0xea800c00
+.long 0xea980c00
+
+.end
+

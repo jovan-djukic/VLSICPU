@@ -1,0 +1,25 @@
+.data.ivt
+	.long init
+
+.text.ivt
+
+incrementByOne:
+	add r0, 1
+	ret
+
+decrementByOne:
+	sub r0, 1
+	ret
+
+init:
+
+	ldc  r0, 0
+	
+	call incrementByOne
+	call decrementByOne
+	call decrementByOne
+	call incrementByOne
+	call incrementByOne
+
+.end
+

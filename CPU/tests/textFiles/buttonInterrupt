@@ -1,0 +1,29 @@
+.data.ivt
+	.long init, init, init, init
+	.long buttonInterrupt
+.text.ivt
+
+buttonInterrupt:
+	add r2, 1
+	out r2, [r3]
+	iret
+
+init:
+	ldc r0, 0
+	and sp, r0
+	add sp, 0xFB
+	ldc r0, 0x80000000
+	mov psw, r0	
+
+	ldc r0, 0
+	ldc r1, 0x2020
+	ldc r2, 0
+	ldc r3, 0x3030
+iloop:
+	add r0, 1
+	out r0, [r1]
+	call iloop
+	
+	iret
+.end
+

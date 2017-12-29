@@ -1,0 +1,122 @@
+//cosntants
+
+`ifndef _DEFS_H_
+`define _DEFS_H_
+
+//register constants
+`define PC	16
+`define LR	17
+`define SP	18
+`define PSW 19
+
+//invalid instruction interrupt number
+`define INVALID_INSTRUCTION_INTERRUPT	2
+
+//flags
+`define I 31
+`define Z 3
+`define O 2
+`define C 1
+`define N 0
+
+//conditions
+`define EQUAL									0
+`define NOT_EQUAL							1
+`define GREATER_THAN					2
+`define GREATER_OR_EQUAL_THAN	3
+`define LESS_THAN							4
+`define LESS_OR_EQUAL_THAN		5
+`define NOT_USED							6
+`define ALWAYS_EXECUTED				7
+
+//operation codes and their corresponding formats
+`define	INSTRUCTION_CONDITION 			31 : 29
+`define INSTRUCTION_SET_FLAGS 			28 
+`define INSTRUCTION_OPERATION_CODE	27 : 24
+
+//interrupt instruction
+`define INTERRUPT 				0
+`define INTERRUPT_SOURCE	23 : 20
+
+//arithemtic instruction (ADD, SUB, MUL, DIV, CMP), PSW not allowed, for PC, LR, SP only addition and subtraction
+//operation codes
+`define ADDITION				1
+`define SUBTRACTION			2
+`define MULTIPLICATION	3
+`define DIVISION				4
+`define COMPARISON			5
+
+//instruction parameters
+`define ARITHMETIC_DESTINATION		23 : 19
+`define ARITHMETIC_IS_IMMEDIATE		18
+`define ARITHMETIC_SOURCE					17 : 13
+`define ARITHMETIC_IMMEDIATE			17 : 0
+`define ARITHMETIC_IMMEDIATE_MSB	17
+
+//logical instructions (AND, OR, NOT, TEST), PC, LR, PSW not allowed
+//operation codes
+`define AND 	6
+`define OR		7
+`define NOT		8
+`define TEST	9
+
+//instruction parameters
+`define LOGICAL_DESTINATION	23 : 19
+`define LOGICAL_SOURCE 			18 : 14
+
+//two constants for differentiating between memory and IO space
+`define MEMORY	1
+`define IO			0
+
+//LOAD/STORE	(LDR/STR) instruction, PSW cannot be an address register, if PC is adress regoster f has to be 0
+//operation code
+`define LOAD_STORE	10
+
+//instruction parameters
+`define LOAD_STORE_ADDRESS_REGISTER	23 : 19
+`define LOAD_STORE_DESTINATION			18 : 14
+`define LOAD_STORE_MODE 						13 : 11
+`define	LOAD_STORE_MODE_LSB					11
+`define	LOAD_STORE_MODE_MSB					13
+`define LOAD_STORE_BASE_CHANGE			13 : 12
+`define LOAD_STORE_IS_LOAD 					10
+`define LOAD_STORE_IMMEDIATE				9 : 0
+`define LOAD_STORE_IMMEDIATE_MSB		9
+
+//CALL instruction
+`define CALL 	12
+
+//instruction parameters
+`define CALL_DESTINATION		23 : 19
+`define CALL_IMMEDIATE			18 : 0
+`define CALL_IMMEDIATE_MSB	18
+
+//IN/OUT instruction
+//operation code
+`define IN_OUT		13
+
+//instruction parameters
+`define IN_OUT_DESTINATION	23 : 20
+`define IN_OUT_SOURCE				19 : 16
+`define IN_OUT_IS_IN				15
+
+//MOV/SHIFT (MOV/SHR/SHL) instruction
+//operation code
+`define MOVE_SHIFT	14
+
+//instruction parameters
+`define MOVE_SHIFT_DESTINATION	23 : 19
+`define MOVE_SHIFT_SOURCE				18 : 14
+`define MOVE_SHIFT_IMMEDIATE		13 : 9
+`define MOVE_SHIFT_IS_LEFT			8
+
+//LOAD_CONSTANT (LDC) instruction
+//operation code
+`define LOAD_CONSTANT	15
+
+//instruction parameters
+`define LOAD_CONSTANT_DESTINATION	23 : 20
+`define LOAD_CONSTANT_IS_HIGH			19
+`define LOAD_CONSTANT_CONSTANT		15 : 0
+
+`endif

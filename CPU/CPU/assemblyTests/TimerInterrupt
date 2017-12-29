@@ -1,0 +1,21 @@
+.data.ivt
+	.long init
+	.long timer
+.text.ivt
+
+timer: 
+	add r0, 1
+	iret
+
+init:
+	ldc r0, 0
+	and sp, r0
+	add sp, 0xFB
+	ldc	r1, 0x80000000
+	mov psw, r1
+
+iloop:
+	call iloop
+
+.end
+

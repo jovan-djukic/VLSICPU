@@ -1,0 +1,81 @@
+module MemoryInterface(addressBus, dataBus, mio, readRequest, clock, address, dataIn, dataOut, isMemory, readWrite , clockCount, ready, enable, reset);
+	
+	// 1 - read
+	// 0 - write
+	
+	parameter ADDRESS_BUS_WIDTH 	= 32;
+	parameter DATA_WIDTH					= 32;
+	parameter DATA_BUS_WIDTH			= 8;
+	parameter CLOCK_COUNT_WIDTH		= 3;
+
+	localparam NUMBER_OF_BYTES 		= (DATA_WIDTH - 1) / DATA_BUS_WIDTH;
+	localparam BYTE_COUNTER_WIDTH	= NUMBER_OF_BYTES <= 2 ? 1 :
+																	NUMBER_OF_BYTES <= 4 ? 2 :
+																	NUMBER_OF_BYTES <= 8 ? 3 : 4;
+	
+	input wire [ADDRESS_BUS_WIDTH - 1	: 0] address;
+	input wire [CLOCK_COUNT_WIDTH - 1 : 0] clockCount;
+	input wire [DATA_WIDTH - 1				: 0] dataIn;
+	input wire 														 readWrite, clock, enable, isMemory, reset;
+	
+	inout wire [ADDRESS_BUS_WIDTH - 1		: 0] addressBus;
+	inout wire [DATA_BUS_WIDTH - 1			:	0] dataBus;
+	inout	wire 												 	   	 mio;
+	inout wire 														 	 readRequest;
+	
+	output wire [DATA_WIDTH - 1					:	0] dataOut;
+	output reg															 ready;
+
+	reg [CLOCK_COUNT_WIDTH - 1	: 0] clockCounter;
+	reg [BYTE_COUNTER_WIDTH - 1	: 0] byteCounter;
+	reg	[ADDRESS_BUS_WIDTH - 1	: 0] memoryAddressRegister;
+	reg [DATA_WIDTH - 1					: 0] memoryDataRegister;
+	reg															 addressEnabled, dataEnabled, working;
+
+	assign addressBus  = addressEnabled == 1 ? memoryAddressRegister 											: {ADDRESS_BUS_WIDTH{1'bz}};
+	assign dataBus	   = dataEnabled 	  == 1 ? memoryDataRegister[(byteCounter * 8) +: 8]	: {DATA_BUS_WIDTH{1'bz}};
+	assign mio				 = addressEnabled == 1 ? isMemory              											: 1'bz;
+	assign readRequest = addressEnabled == 1 ? readWrite 																	: 1'bz;
+		
+	assign dataOut = ready == 1 ? memoryDataRegister : {DATA_WIDTH{1'bz}};
+
+	always @(posedge clock) begin
+		if (reset == 1) begin
+			working					<= 0;
+			ready 					<= 0;
+			dataEnabled 		<= 0;
+			addressEnabled	<= 0;
+		end else if (enable == 1) begin
+			memoryAddressRegister <= address;
+			addressEnabled 				<= 1;
+			
+			if (readWrite == 0) begin
+				memoryDataRegister	<= dataIn;
+				dataEnabled					<= 1;
+			end
+			
+			clockCounter	<= clockCount;
+			byteCounter		<= 0;
+			ready 				<= 0;
+			working				<= 1;		
+	 	end else if (working == 1) begin
+			if (clockCounter != 0) begin 
+				clockCounter <= clockCounter - 1;
+			end else if (clockCounter == 0) begin
+				if (readWrite == 1) begin
+					memoryDataRegister[(byteCounter * 8) +: 8] <= dataBus;
+				end
+				byteCounter <= byteCounter + 1; 
+				if (byteCounter != NUMBER_OF_BYTES) begin
+					clockCounter					<= clockCount;
+					memoryAddressRegister	<= memoryAddressRegister + 1;
+				end else begin
+					addressEnabled	<= 0;
+					dataEnabled    	<= 0;
+					ready						<= 1;
+					working					<= 0;
+				end
+		 	end
+	 	end
+	end
+endmodule

@@ -1,0 +1,61 @@
+module SimpleInstructionTestBench();
+	
+wire clock;
+ClockGenerator clockGenerator(
+	.clock(clock)
+);	
+
+wire	[31 : 0]	address;
+wire						mio;
+wire	[7	: 0]	data;
+wire 						readRequest;
+reg							cpuReset, timerReset;
+wire	[15 : 0]  interruptLines;
+
+//Timer #(1000) Timer_instance (
+//	.clock(clock),
+//	.reset(timerReset),
+//	.pulse(interruptLines[1])
+//);
+
+Memory #(32,1024,"/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/MOVSHIFTInstructionTest") memory (
+	.address(address),
+	.mio(mio),
+	.data(data),
+	.readRequest(readRequest),
+	.clock(clock)
+);
+
+CPU  cpu (
+	.clock(clock),
+	.reset(cpuReset),
+	.addressBus(address),
+	.mio(mio),
+	.dataBus(data),
+	.readRequest(readRequest),
+	.externalInterrupts(interruptLines)
+);
+
+Printer #(16) printer (
+	.address(address[15 : 0]),
+	.mio(mio),
+	.data(data),
+	.readRequest(readRequest),
+	.clock(clock)
+);
+
+initial begin
+	cpuReset 		= 1;
+	timerReset 	= 1;
+	
+	repeat(4) @(posedge clock);
+		
+	cpuReset 		= 0;
+	timerReset 	= 0;
+	
+	repeat(2000) @(posedge clock);
+		
+	$finish();
+end
+
+endmodule

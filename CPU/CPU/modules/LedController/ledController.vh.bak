@@ -1,0 +1,6 @@
+`ifndef _LED_CONTROLLER_VH
+`define _LED_CONTROLLER_VH
+
+`define LED_CONTROLLER_ADDRESS 32'h3030
+
+`endif

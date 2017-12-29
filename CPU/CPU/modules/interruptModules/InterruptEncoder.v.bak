@@ -1,0 +1,3 @@
+module InterruptPriorityEncoder(externalInterrupts, PSWI, internalInterrupts, address, interruptNumber, interruptPresent);
+
+endmodule

@@ -1,0 +1,30 @@
+.data.ivt
+	.long init
+
+.text.ivt
+
+arrayAddress: .long array
+n: .long 6
+array: .long 0, 1, 2, 3, 4, 5
+
+init:
+
+	ldr  r0, n
+	ldr  r1, arrayAddress
+	ldr	 r2, arrayAddress
+	ldc	 r3, 0
+
+loop:
+	cmps r0, 0
+	calleq end
+
+	ldria r4, [r1]
+	add r3, r4
+	sub r0, 1
+	stria r3, [r2]
+	call loop
+
+end:
+	iret
+.end
+

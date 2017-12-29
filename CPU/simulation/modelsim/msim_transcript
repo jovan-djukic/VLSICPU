@@ -1,0 +1,151 @@
+# do CPU_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying /opt/altera13/modelsim_ase/linux/../modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules {/home/jovan/quartusWorkspace/CPU/CPU/modules/RSFlipFlop.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RSFlipFlop
+# 
+# Top level modules:
+# 	RSFlipFlop
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/tests/cpu {/home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SimpleInstructionTestBench
+# 
+# Top level modules:
+# 	SimpleInstructionTestBench
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules {/home/jovan/quartusWorkspace/CPU/CPU/modules/ClockGenerator.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ClockGenerator
+# 
+# Top level modules:
+# 	ClockGenerator
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/memory {/home/jovan/quartusWorkspace/CPU/CPU/modules/memory/MemoryInterface.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MemoryInterface
+# 
+# Top level modules:
+# 	MemoryInterface
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/memory {/home/jovan/quartusWorkspace/CPU/CPU/modules/memory/Memory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Memory
+# 
+# Top level modules:
+# 	Memory
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/alu {/home/jovan/quartusWorkspace/CPU/CPU/modules/alu/Divider.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Divider
+# 
+# Top level modules:
+# 	Divider
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/alu {/home/jovan/quartusWorkspace/CPU/CPU/modules/alu/Adder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Adder
+# 
+# Top level modules:
+# 	Adder
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/interruptModules {/home/jovan/quartusWorkspace/CPU/CPU/modules/interruptModules/InterruptEncoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InterruptPriorityEncoder
+# 
+# Top level modules:
+# 	InterruptPriorityEncoder
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/LedController {/home/jovan/quartusWorkspace/CPU/CPU/modules/LedController/ledController.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LedController
+# 
+# Top level modules:
+# 	LedController
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/SevenSegment {/home/jovan/quartusWorkspace/CPU/CPU/modules/SevenSegment/sevenSegmentController.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SevenSegmentController
+# 
+# Top level modules:
+# 	SevenSegmentController
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/interruptModules {/home/jovan/quartusWorkspace/CPU/CPU/modules/interruptModules/InterruptHandler.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InterruptHandler
+# 
+# Top level modules:
+# 	InterruptHandler
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu {/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu/InstructionDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InstructionDecoder
+# 
+# Top level modules:
+# 	InstructionDecoder
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu {/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu/CPU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CPU
+# 
+# Top level modules:
+# 	CPU
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu {/home/jovan/quartusWorkspace/CPU/CPU/modules/cpu/ConditionDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ConditionDecoder
+# 
+# Top level modules:
+# 	ConditionDecoder
+# vlog -vlog01compat -work work +incdir+/home/jovan/quartusWorkspace/CPU/CPU/modules/alu {/home/jovan/quartusWorkspace/CPU/CPU/modules/alu/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# 
+vsim work.SimpleInstructionTestBench
+# vsim work.SimpleInstructionTestBench 
+# Loading work.SimpleInstructionTestBench
+# Loading work.ClockGenerator
+# Loading work.Memory
+# Loading work.CPU
+# Loading work.RSFlipFlop
+# Loading work.MemoryInterface
+# Loading work.InstructionDecoder
+# Loading work.ConditionDecoder
+# Loading work.InterruptHandler
+# Loading work.InterruptPriorityEncoder
+# Loading work.ALU
+# Loading work.Divider
+# Loading work.Adder
+# Loading work.SevenSegmentController
+# Loading work.LedController
+# ** Warning: (vsim-3017) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(43): [TFMPC] - Too few port connections. Expected 10, found 6.
+#         Region: /SimpleInstructionTestBench/sevenSegmentController
+# ** Warning: (vsim-3722) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(43): [TFMPC] - Missing connection for port 'hex0'.
+# ** Warning: (vsim-3722) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(43): [TFMPC] - Missing connection for port 'hex1'.
+# ** Warning: (vsim-3722) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(43): [TFMPC] - Missing connection for port 'hex2'.
+# ** Warning: (vsim-3722) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(43): [TFMPC] - Missing connection for port 'hex3'.
+# ** Warning: (vsim-3017) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(52): [TFMPC] - Too few port connections. Expected 7, found 6.
+#         Region: /SimpleInstructionTestBench/ledController
+# ** Warning: (vsim-3722) /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v(52): [TFMPC] - Missing connection for port 'ledState'.
+add wave -position end  sim:/SimpleInstructionTestBench/clock
+add wave -position end  sim:/SimpleInstructionTestBench/address
+add wave -position end  sim:/SimpleInstructionTestBench/dataIn
+add wave -position end  sim:/SimpleInstructionTestBench/dataOut
+add wave -position end  sim:/SimpleInstructionTestBench/readRequest
+add wave -position end  sim:/SimpleInstructionTestBench/mio
+add wave -position end  sim:/SimpleInstructionTestBench/enable
+add wave -position end  sim:/SimpleInstructionTestBench/interruptLines[4]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PC
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/LR
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/SP
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PSW
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/IR
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[0]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[1]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[2]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[3]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/interruptRoutineAddress
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/interruptPresent
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/interruptNumberWire
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/interruptNumber
+add wave -position end  sim:/SimpleInstructionTestBench/sevenSegmentController/sevenSegmentState
+add wave -position end  sim:/SimpleInstructionTestBench/ledController/ledState
+run -all
+# 1
+# Break in Module SimpleInstructionTestBench at /home/jovan/quartusWorkspace/CPU/CPU/tests/cpu/SimpleInstructionTestBench.v line 69

@@ -1,0 +1,39 @@
+.data.ivt
+	.long init, 0, 0, 0
+	.long int1
+	.long int2
+.text.ivt
+
+int1: 
+	add r0, 1
+	iret
+
+int2:
+	sub r0, 1
+	iret
+
+function:
+	push lr
+	int 5
+	pop lr
+	ret
+
+init:
+	
+	ldc r0, 0
+	and sp, r0
+	add sp, 0xFB
+
+	ldc r0, 0x80000000
+	mov	psw, r0
+
+	ldc r0, 0
+
+	int 4
+	int 5
+	call function
+	int 4
+
+	iret
+.end
+

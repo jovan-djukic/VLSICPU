@@ -1,0 +1,48 @@
+.data.ivt
+	.long init
+
+.text.ivt
+
+init:
+
+	ldc r0, 1
+	ldc r1, 2
+
+	and r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	ands r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	or r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	ors r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	not r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	nots r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	test r0, r1
+
+	ldc r0, 1
+	ldc r1, 2
+
+	tests r0, r1
+.end
+

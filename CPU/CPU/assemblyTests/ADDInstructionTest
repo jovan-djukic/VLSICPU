@@ -1,0 +1,25 @@
+.data.ivt
+	.long init
+
+.text.ivt
+
+init:
+	ldc  r0, -1
+	add  r0,  1
+
+	ldc  r0, -1
+	adds r0,  1
+
+	addne r0, 1 
+
+	ldc  r0,  0x40000000
+	ldc  r1,  0x40000000
+	add  r0,  r1
+
+	ldc  r0,  0x40000000
+	ldc  r1,  0x40000000
+	adds r0,  r1
+
+	iret
+
+.end

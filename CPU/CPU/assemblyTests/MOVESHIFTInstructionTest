@@ -1,0 +1,28 @@
+.data.ivt
+	.long init
+
+.text.ivt
+
+
+init:
+
+	ldc  r0, 0
+	mov  r1, r0
+
+	ldc  r0, 0
+	movs r1, r0
+	
+	ldc  r0, 3
+	shl  r1, r0, 31
+
+	ldc  r0, 3
+	shls r1, r0, 31
+
+	ldc  r0, 0x80000000
+	shr  r1, r0, 31
+
+	ldc  r0, 0x80000000
+	shrs r1, r0, 31
+
+.end
+

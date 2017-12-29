@@ -1,0 +1,294 @@
+# Reading pref.tcl
+# vsim -gui -modelsimini /tmp/SigasiCompileCache4976094673524692712/CPU/mentor/modelsim.ini work.SimpleInstructionTestBench 
+# Start time: 15:02:44 on May 21,2017
+# Loading work.SimpleInstructionTestBench
+# Loading work.ClockGenerator
+# Loading work.Timer
+# Loading work.Memory
+# Loading work.CPU
+# Loading work.TransparentLatch
+# Loading work.MemoryInterface
+# Loading work.InstructionDecoder
+# Loading work.ConditionDecoder
+# Loading work.InterruptHandler
+# Loading work.InterruptCatcher
+# Loading work.ALU
+# Loading work.Divider
+# Loading work.Adder
+# Loading work.Printer
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PC
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/IR
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[0]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/registers[1]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/A
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/B
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/NV
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/executionResult
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/divisionResult
+add wave -position 8  sim:/SimpleInstructionTestBench/cpu/startDivision
+add wave -position 9  sim:/SimpleInstructionTestBench/cpu/divisionDone
+run -all
+# ** Note: $finish    : /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v(58)
+#    Time: 20035 ps  Iteration: 1  Instance: /SimpleInstructionTestBench
+# 1
+# Break in Module SimpleInstructionTestBench at /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v line 58
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/state
+restart -f
+run -all
+# ** Note: $finish    : /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v(58)
+#    Time: 20035 ps  Iteration: 1  Instance: /SimpleInstructionTestBench
+# 1
+# Break in Module SimpleInstructionTestBench at /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v line 58
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/Adder.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/Adder.v 
+# -- Compiling module Adder
+# 
+# Top level modules:
+# 	Adder
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/ClockGenerator.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/ClockGenerator.v 
+# -- Compiling module ClockGenerator
+# 
+# Top level modules:
+# 	ClockGenerator
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/ConditionDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/ConditionDecoder.v 
+# -- Compiling module ConditionDecoder
+# 
+# Top level modules:
+# 	ConditionDecoder
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/CPU.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/CPU.v 
+# -- Compiling module CPU
+# 
+# Top level modules:
+# 	CPU
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/Divider.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/alu/Divider.v 
+# -- Compiling module Divider
+# 
+# Top level modules:
+# 	Divider
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/alu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/alu/DividerTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/alu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/alu/DividerTestBench.v 
+# -- Compiling module DividerTestBench
+# 
+# Top level modules:
+# 	DividerTestBench
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/InstructionDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/cpu/InstructionDecoder.v 
+# -- Compiling module InstructionDecoder
+# 
+# Top level modules:
+# 	InstructionDecoder
+# End time: 15:06:39 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/instructionDecoder} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/instructionDecoder/InstructionDecoderTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:39 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/instructionDecoder" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/instructionDecoder/InstructionDecoderTestBench.v 
+# -- Compiling module InstructionDecoderTestBench
+# 
+# Top level modules:
+# 	InstructionDecoderTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/InterruptCatcher.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/InterruptCatcher.v 
+# -- Compiling module InterruptCatcher
+# 
+# Top level modules:
+# 	InterruptCatcher
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/InterruptHandler.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/InterruptHandler.v 
+# -- Compiling module InterruptHandler
+# 
+# Top level modules:
+# 	InterruptHandler
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/InterruptHandlerTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/InterruptHandlerTestBench.v 
+# -- Compiling module InterruptHandlerTestBench
+# 
+# Top level modules:
+# 	InterruptHandlerTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory/Memory.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory/Memory.v 
+# -- Compiling module Memory
+# 
+# Top level modules:
+# 	Memory
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory/MemoryInterface.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/memory/MemoryInterface.v 
+# -- Compiling module MemoryInterface
+# 
+# Top level modules:
+# 	MemoryInterface
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory/MemoryInterfaceTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory/MemoryInterfaceTestBench.v 
+# -- Compiling module MemoryInterfaceTestBench
+# 
+# Top level modules:
+# 	MemoryInterfaceTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory/MemoryTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/memory/MemoryTestBench.v 
+# -- Compiling module MemoryTestBench
+# 
+# Top level modules:
+# 	MemoryTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Printer.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Printer.v 
+# -- Compiling module Printer
+# 
+# Top level modules:
+# 	Printer
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v 
+# -- Compiling module SimpleInstructionTestBench
+# 
+# Top level modules:
+# 	SimpleInstructionTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Timer} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Timer/timer.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Timer" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/Timer/timer.v 
+# -- Compiling module Timer
+# 
+# Top level modules:
+# 	Timer
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/TimerTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/TimerTestBench.v 
+# -- Compiling module TimerTestBench
+# 
+# Top level modules:
+# 	TimerTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/TransparentLatch.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/modules/interruptModules/TransparentLatch.v 
+# -- Compiling module TransparentLatch
+# 
+# Top level modules:
+# 	TransparentLatch
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work {+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt} {/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/TransparentLatchTestBench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 15:06:40 on May 21,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt" /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/interrupt/TransparentLatchTestBench.v 
+# -- Compiling module TransparentLatchTestBench
+# 
+# Top level modules:
+# 	TransparentLatchTestBench
+# End time: 15:06:40 on May 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# Loading work.SimpleInstructionTestBench
+# Loading work.ClockGenerator
+# Loading work.Timer
+# Loading work.Memory
+# Loading work.CPU
+# Loading work.TransparentLatch
+# Loading work.MemoryInterface
+# Loading work.InstructionDecoder
+# Loading work.ConditionDecoder
+# Loading work.InterruptHandler
+# Loading work.InterruptCatcher
+# Loading work.ALU
+# Loading work.Divider
+# Loading work.Adder
+# Loading work.Printer
+run -all
+# ** Note: $finish    : /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v(58)
+#    Time: 20035 ps  Iteration: 1  Instance: /SimpleInstructionTestBench
+# 1
+# Break in Module SimpleInstructionTestBench at /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v line 58
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PSW[3]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PSW[2]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PSW[1]
+add wave -position end  sim:/SimpleInstructionTestBench/cpu/PSW[0]
+restart -f
+run -all
+# ** Note: $finish    : /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v(58)
+#    Time: 20035 ps  Iteration: 1  Instance: /SimpleInstructionTestBench
+# 1
+# Break in Module SimpleInstructionTestBench at /media/jovan/Local Disk2/workspaces/SigasiWorkspace/CPU/tests/cpu/SimpleInstructionTestBench.v line 58
+# End time: 15:13:25 on May 21,2017, Elapsed time: 0:10:41
+# Errors: 0, Warnings: 0

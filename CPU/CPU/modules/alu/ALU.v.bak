@@ -1,0 +1,82 @@
+`include "ALU.vh"
+
+module ALU(
+	input 	wire[31 : 0]	firstOperand,
+	input 	wire[31 : 0]	secondOperand,
+	input		wire[3 	: 0]		operation,
+	output 	reg	[31 : 0] 	result,
+	output 	reg						carry,
+	output 	reg						overflow,
+	output 	reg						zero,
+	output	reg						negative
+);
+
+always @(*) begin
+	
+	carry			= 1'bz;
+	overflow	= 1'bz;
+	result 		= {32{1'bz}};
+	
+	case (operation)
+	
+		`ALU_ADD: begin
+			{carry, result} = firstOperand + secondOperand;
+			overflow	= ({carry, result[31]} == 2'b01);
+		end
+		
+		`ALU_SUB: begin
+			{carry, result} = firstOperand - secondOperand;
+			overflow	= ({carry, result[31]} == 2'b01);
+		end
+		
+		`ALU_MUL: begin
+			result = firstOperand * secondOperand;
+		end
+		
+		`ALU_DIV: begin
+			
+		end
+	
+		`ALU_SHL: begin
+			{carry, result} = firstOperand << secondOperand;
+		end
+		
+		`ALU_SHR: begin 
+			{carry, result} = firstOperand >> secondOperand;
+		end
+		
+		`ALU_AND: begin
+			result = firstOperand & secondOperand;
+		end
+	
+		`ALU_OR: begin
+			result = firstOperand | secondOperand;
+		end
+	
+		`ALU_NOT: begin
+			result = ~secondOperand;
+		end
+		
+		`ALU_A: begin
+			result = firstOperand;
+		end
+		
+		`ALU_B: begin
+			result = secondOperand;
+		end
+		
+		`ALU_SWL: begin
+			result = {firstOperand[31 : 16], secondOperand[15 : 0]};
+		end
+		
+		`ALU_SWH: begin
+			result = {secondOperand[31 : 16], firstOperand[15 : 0]};
+		end
+	endcase
+	
+	zero 			= ~(|result);
+	negative	= result[31];
+
+end
+	
+endmodule
